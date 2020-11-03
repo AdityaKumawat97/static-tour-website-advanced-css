@@ -1,3 +1,172 @@
-$LightGreen: #7ed56f;
+$LightGreen: #89e979;
+$LightGreenWithOpacity: rgba(55, 255, 20, 0.651);
 $MediumGreen: #55c57a;
-$DarkGreen: #28b485;
+$DarkGreen: #28b43f;
+$DarkGreenWithOpacity: rgba(55, 255, 20, 0.877);
+
+$TextGrey: #777;
+
+$body-font: "Lato", sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $body-font;
+    font-weight: 400;
+    font-style: 16px;
+    line-height: 1.7;
+    color: $TextGrey;
+    padding: 30px;
+}
+
+.header {
+    height: 95vh;
+    position: relative;
+    background-image: linear-gradient(to right, $LightGreenWithOpacity, $DarkGreenWithOpacity), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    .logo {
+        height: 35px;
+    }
+}
+.text-box {
+    position: absolute;
+    width: auto;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    .heading-primary {
+        color: #fff;
+        backface-visibility: hidden;
+        text-transform: uppercase;
+        margin-bottom: 8%;
+        .heading-primary-main {
+            display: block;
+            text-align: center;
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: 2.5vw;
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            -moz-animation-timing-function: ease-out;
+            // animation-delay: 1s;
+        }
+        .heading-primary-sub {
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.8vw;
+            letter-spacing: 15.4px;
+            animation-name: moveInRight;
+            animation-duration: 1s;
+            -moz-animation-timing-function: ease-out;
+        }
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.2s;
+    font-size: 1vw;
+    position: relative;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba($color: #000000, $alpha: 0.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.2);
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+    }
+}
+
+.btn-white {
+    background-color: white;
+    color: $TextGrey;
+
+    &::after {
+        background-color: white;
+    }
+}
+
+.btn-animated {
+    animation-name: moveInBottom;
+    animation-fill-mode: backwards;
+    animation-duration: 0.4s;
+    animation-delay: 0.5s;
+    -moz-animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
