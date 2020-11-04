@@ -8,19 +8,26 @@ $TextGrey: #777;
 
 $body-font: "Lato", sans-serif;
 
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
 }
 
 body {
     font-family: $body-font;
     font-weight: 400;
-    font-style: 16px;
+    font-size: 16px;
     line-height: 1.7;
     color: $TextGrey;
-    padding: 30px;
+    padding: 2.5vw;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 .header {
@@ -29,49 +36,49 @@ body {
     background-image: linear-gradient(to right, $LightGreenWithOpacity, $DarkGreenWithOpacity), url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
+    clip-path: polygon(0 0, 100% 0, 100% 78vh, 0 100%);
 
-.logo-box {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    .logo {
-        height: 35px;
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
     }
-}
-.text-box {
-    position: absolute;
-    width: auto;
-    top: 40%;
-    left: 50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    .heading-primary {
-        color: #fff;
-        backface-visibility: hidden;
-        text-transform: uppercase;
-        margin-bottom: 8%;
-        .heading-primary-main {
-            display: block;
-            text-align: center;
-            font-size: 4rem;
-            font-weight: 400;
-            letter-spacing: 2.5vw;
-            animation-name: moveInLeft;
-            animation-duration: 1s;
-            -moz-animation-timing-function: ease-out;
-            // animation-delay: 1s;
-        }
-        .heading-primary-sub {
-            display: block;
-            text-align: center;
-            font-weight: 700;
-            font-size: 1.8vw;
-            letter-spacing: 15.4px;
-            animation-name: moveInRight;
-            animation-duration: 1s;
-            -moz-animation-timing-function: ease-out;
+    &__logo {
+        height: calc(1.8rem + 1vw);
+    }
+    &__text-box {
+        position: absolute;
+        width: auto;
+        top: 40%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+
+        .heading-primary {
+            color: #fff;
+            backface-visibility: hidden;
+            text-transform: uppercase;
+            margin-bottom: 6rem;
+            .heading-primary--main {
+                display: block;
+                text-align: center;
+                font-size: calc(3rem + 2.5vw);
+                font-weight: 400;
+                letter-spacing: 3.5vw;
+                animation-name: moveInLeft;
+                animation-duration: 1s;
+                -moz-animation-timing-function: ease-out;
+            }
+            .heading-primary--sub {
+                display: block;
+                text-align: center;
+                font-weight: 700;
+                font-size: calc(1rem + 0.8vw);
+                letter-spacing: calc(1rem + 0.5vw);
+                animation-name: moveInRight;
+                animation-duration: 1s;
+                -moz-animation-timing-function: ease-out;
+            }
         }
     }
 }
@@ -80,16 +87,17 @@ body {
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all 0.2s;
-    font-size: 1.2vw;
+    font-size: calc(1rem + 0.4vw);
+
     position: relative;
 
     &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba($color: #000000, $alpha: 0.2);
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.2);
 
         &::after {
             transform: scaleX(1.4) scaleY(1.6);
@@ -98,8 +106,8 @@ body {
     }
 
     &:active {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.2);
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.2);
     }
 
     &::after {
@@ -107,7 +115,7 @@ body {
         display: inline-block;
         height: 100%;
         width: 100%;
-        border-radius: 100px;
+        border-radius: 10rem;
         position: absolute;
         top: 0;
         left: 0;
@@ -116,7 +124,7 @@ body {
     }
 }
 
-.btn-white {
+.btn--white {
     background-color: white;
     color: $TextGrey;
 
@@ -125,7 +133,7 @@ body {
     }
 }
 
-.btn-animated {
+.btn--animated {
     animation-name: moveInBottom;
     animation-fill-mode: backwards;
     animation-duration: 0.4s;
@@ -136,10 +144,10 @@ body {
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
     80% {
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
     100% {
         opacity: 1;
@@ -149,10 +157,10 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
     80% {
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
     100% {
         opacity: 1;
@@ -163,7 +171,7 @@ body {
 @keyframes moveInBottom {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
     100% {
         opacity: 1;

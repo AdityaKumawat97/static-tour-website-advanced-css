@@ -1,17 +1,26 @@
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-style: 16px;
+  font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 2.5vw;
+  scroll-behavior: smooth;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .header {
@@ -21,21 +30,21 @@ body {
   background-image: linear-gradient(to right, rgba(55, 255, 20, 0.651), rgba(55, 255, 20, 0.877)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 78vh, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 78vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
-.logo-box .logo {
-  height: 35px;
+.header__logo {
+  height: calc(1.8rem + 1vw);
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   width: auto;
   top: 40%;
@@ -45,20 +54,20 @@ body {
           transform: translate(-50%, -50%);
 }
 
-.text-box .heading-primary {
+.header__text-box .heading-primary {
   color: #fff;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   text-transform: uppercase;
-  margin-bottom: 8%;
+  margin-bottom: 6rem;
 }
 
-.text-box .heading-primary .heading-primary-main {
+.header__text-box .heading-primary .heading-primary--main {
   display: block;
   text-align: center;
-  font-size: 4rem;
+  font-size: calc(3rem + 2.5vw);
   font-weight: 400;
-  letter-spacing: 2.5vw;
+  letter-spacing: 3.5vw;
   -webkit-animation-name: moveInLeft;
           animation-name: moveInLeft;
   -webkit-animation-duration: 1s;
@@ -66,12 +75,12 @@ body {
   -moz-animation-timing-function: ease-out;
 }
 
-.text-box .heading-primary .heading-primary-sub {
+.header__text-box .heading-primary .heading-primary--sub {
   display: block;
   text-align: center;
   font-weight: 700;
-  font-size: 1.8vw;
-  letter-spacing: 15.4px;
+  font-size: calc(1rem + 0.8vw);
+  letter-spacing: calc(1rem + 0.5vw);
   -webkit-animation-name: moveInRight;
           animation-name: moveInRight;
   -webkit-animation-duration: 1s;
@@ -83,21 +92,21 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  font-size: 1.2vw;
+  font-size: calc(1rem + 0.4vw);
   position: relative;
 }
 
 .btn:link:hover,
 .btn:visited:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:link:hover::after,
@@ -109,10 +118,10 @@ body {
 
 .btn:link:active,
 .btn:visited:active {
-  -webkit-transform: translateY(-1px);
-          transform: translateY(-1px);
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-0.1rem);
+          transform: translateY(-0.1rem);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:link::after,
@@ -121,7 +130,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -130,16 +139,16 @@ body {
   transition: all 0.4s;
 }
 
-.btn-white {
+.btn--white {
   background-color: white;
   color: #777;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: white;
 }
 
-.btn-animated {
+.btn--animated {
   -webkit-animation-name: moveInBottom;
           animation-name: moveInBottom;
   -webkit-animation-fill-mode: backwards;
@@ -154,12 +163,12 @@ body {
 @-webkit-keyframes moveInLeft {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
   }
   80% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -171,12 +180,12 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
   }
   80% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -188,12 +197,12 @@ body {
 @-webkit-keyframes moveInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px);
+    -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
   }
   80% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -205,12 +214,12 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px);
+    -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
   }
   80% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -222,8 +231,8 @@ body {
 @-webkit-keyframes moveInBottom {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
   }
   100% {
     opacity: 1;
@@ -235,8 +244,8 @@ body {
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
   }
   100% {
     opacity: 1;
