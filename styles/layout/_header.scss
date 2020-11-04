@@ -1,0 +1,52 @@
+.header {
+    height: 95vh;
+    position: relative;
+    background-image: linear-gradient(to right, $LightGreenWithOpacity, $DarkGreenWithOpacity), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 78vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    &__logo {
+        height: calc(1.8rem + 1vw);
+    }
+    &__text-box {
+        position: absolute;
+        width: auto;
+        top: 40%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+
+        .heading-primary {
+            color: #fff;
+            backface-visibility: hidden;
+            text-transform: uppercase;
+            margin-bottom: 6rem;
+            .heading-primary--main {
+                display: block;
+                text-align: center;
+                font-size: calc(3rem + 2.5vw);
+                font-weight: 400;
+                letter-spacing: 3.5vw;
+                animation-name: moveInLeft;
+                animation-duration: 1s;
+                -moz-animation-timing-function: ease-out;
+            }
+            .heading-primary--sub {
+                display: block;
+                text-align: center;
+                font-weight: 700;
+                font-size: calc(1rem + 0.8vw);
+                letter-spacing: calc(1rem + 0.5vw);
+                animation-name: moveInRight;
+                animation-duration: 1s;
+                -moz-animation-timing-function: ease-out;
+            }
+        }
+    }
+}
