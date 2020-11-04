@@ -12,11 +12,6 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #777;
   padding: 2.5vw;
   scroll-behavior: smooth;
   -webkit-box-sizing: border-box;
@@ -117,6 +112,48 @@ body {
   }
 }
 
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+}
+
+.heading-primary {
+  color: #fff;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+}
+
+.heading-primary--main {
+  display: block;
+  text-align: center;
+  font-size: calc(3rem + 2.5vw);
+  font-weight: 400;
+  letter-spacing: 3.5vw;
+  -webkit-animation-name: moveInLeft;
+          animation-name: moveInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -moz-animation-timing-function: ease-out;
+}
+
+.heading-primary--sub {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: calc(1rem + 0.8vw);
+  letter-spacing: calc(1rem + 0.5vw);
+  -webkit-animation-name: moveInRight;
+          animation-name: moveInRight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -moz-animation-timing-function: ease-out;
+}
+
 .header {
   height: 95vh;
   position: relative;
@@ -146,40 +183,6 @@ body {
   text-align: center;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-.header__text-box .heading-primary {
-  color: #fff;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  text-transform: uppercase;
-  margin-bottom: 6rem;
-}
-
-.header__text-box .heading-primary .heading-primary--main {
-  display: block;
-  text-align: center;
-  font-size: calc(3rem + 2.5vw);
-  font-weight: 400;
-  letter-spacing: 3.5vw;
-  -webkit-animation-name: moveInLeft;
-          animation-name: moveInLeft;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -moz-animation-timing-function: ease-out;
-}
-
-.header__text-box .heading-primary .heading-primary--sub {
-  display: block;
-  text-align: center;
-  font-weight: 700;
-  font-size: calc(1rem + 0.8vw);
-  letter-spacing: calc(1rem + 0.5vw);
-  -webkit-animation-name: moveInRight;
-          animation-name: moveInRight;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -moz-animation-timing-function: ease-out;
 }
 
 .btn:link, .btn:visited {
