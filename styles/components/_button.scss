@@ -41,7 +41,7 @@
     }
     &--white {
         background-color: white;
-        color: $TextGrey;
+        color: $color-grey-dark;
 
         &::after {
             background-color: white;
@@ -53,5 +53,15 @@
         animation-duration: 0.4s;
         animation-delay: 0.5s;
         -moz-animation-timing-function: ease-out;
+    }
+
+    &-text {
+        &:link,
+        &:visited {
+        }
+        &:hover {
+        }
+        &:active {
+        }
     }
 }

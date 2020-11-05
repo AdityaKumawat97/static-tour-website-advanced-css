@@ -1,8 +1,29 @@
-$LightGreen: #89e979;
-$LightGreenWithOpacity: rgba(78, 219, 108, 0.829);
-$MediumGreen: #55c57a;
-$DarkGreen: #28b43f;
-$DarkGreenWithOpacity: rgba(43, 250, 7, 0.795);
-$Black: #000;
-$TextGrey: #777;
-$body-font: "Lato", sans-serif;
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-primary-light-withOpacity: rgba(126, 213, 111, 0.8);
+$color-primary-dark-withOpacity: rgba(40, 180, 133, 0.8);
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+// FONT
+$default-font-size: 1.6rem;
+
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;

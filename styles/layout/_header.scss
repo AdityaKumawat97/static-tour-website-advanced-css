@@ -1,7 +1,8 @@
 .header {
     height: 95vh;
     position: relative;
-    background-image: linear-gradient(to right, $LightGreenWithOpacity, $DarkGreenWithOpacity), url(../img/hero.jpg);
+    background-image: linear-gradient(to right, $color-primary-light-withOpacity, $color-primary-dark-withOpacity),
+        url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 78vh, 0 100%);
