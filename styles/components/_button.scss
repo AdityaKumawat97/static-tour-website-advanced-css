@@ -47,6 +47,13 @@
             background-color: white;
         }
     }
+    &--green {
+        background-color: $color-primary;
+        color: white;
+        &::after {
+            background-color: $color-primary;
+        }
+    }
     &--animated {
         animation-name: moveInBottom;
         animation-fill-mode: backwards;
